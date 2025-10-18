@@ -1,14 +1,7 @@
 import React from 'react';
 import './Hero.css';
 
-const Hero = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+const Hero = ({ navigateToSection }) => {
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
@@ -27,7 +20,7 @@ const Hero = () => {
             <div className="hero-buttons">
               <button 
                 className="btn btn-primary"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => navigateToSection(3)}
               >
                 Get In Touch
               </button>

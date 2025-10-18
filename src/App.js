@@ -77,7 +77,7 @@ function App() {
             style={{ transform: `translateX(-${currentSection * 100}vw)` }}
           >
             <div className="section-page">
-              <Hero />
+              <Hero navigateToSection={navigateToSection} />
             </div>
             <div className="section-page">
               <About />
