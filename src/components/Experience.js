@@ -4,19 +4,31 @@ import './Experience.css';
 const Experience = () => {
       const experiences = [
         {
-          title: 'Senior Frontend Developer',
-          company: 'Tech Company Inc.',
-          period: '2022 - Present',
-          description: 'Led the development of multiple React applications, improved performance by 40%, and mentored junior developers.',
+          title: 'Software Engineer',
+          company: 'Shramajeevi Television Pvt Ltd',
+          period: 'Present',
+          description: 'Building backend systems, video server, and RAG solutions for intelligent applications and driving business growth.',
           technologies: ['React', 'TypeScript', 'Redux', 'Jest', 'Webpack']
         },
         {
-          title: 'Full Stack Developer',
-          company: 'StartupXYZ',
-          period: '2021 - 2022',
-          description: 'Built end-to-end web applications using React and Node.js, collaborated with design team to implement pixel-perfect UIs.',
+          title: 'Application Developer Intern',
+          company: 'Shramajeevi Television Pvt Ltd',
+          period: '2024 - 2025',
+          description: (
+            <>
+              Built essential features for the mobile app{' '}
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.shramajeevi.farmtv&hl=en_IN" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="farmtv-link"
+              >
+                FarmTV
+              </a>
+            </>
+          ),
           technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'AWS']
-        }
+        },
       ];
 
 

@@ -134,7 +134,7 @@
 }
 
 .contact-item-centered:hover .contact-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
 }
 
