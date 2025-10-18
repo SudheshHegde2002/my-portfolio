@@ -26,7 +26,7 @@ const Hero = ({ navigateToSection }) => {
               </button>
               <button 
                 className="btn btn-secondary"
-                onClick={() => window.open('/resume.pdf', '_blank')}
+                onClick={() => window.open('/Sudhesh%20Resume.pdf', '_blank')}
               >
                 Resume
               </button>
