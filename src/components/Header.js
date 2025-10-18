@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 
-const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld }) => {
+const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld, currentSection, navigateToSection, sections }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -13,10 +13,10 @@ const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (sectionName) => {
+    const sectionIndex = sections.indexOf(sectionName);
+    if (sectionIndex !== -1) {
+      navigateToSection(sectionIndex);
     }
   };
 
@@ -29,10 +29,10 @@ const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld }) => {
         
         <nav className="nav">
           <ul className="nav-list">
-            <li><button onClick={() => scrollToSection('hero')} className="nav-link">Home</button></li>
-            <li><button onClick={() => scrollToSection('about')} className="nav-link">About</button></li>
-            <li><button onClick={() => scrollToSection('experience')} className="nav-link">Experience</button></li>
-            <li><button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button></li>
+            <li><button onClick={() => handleNavClick('hero')} className={`nav-link ${currentSection === 0 ? 'active' : ''}`}>Home</button></li>
+            <li><button onClick={() => handleNavClick('about')} className={`nav-link ${currentSection === 1 ? 'active' : ''}`}>About</button></li>
+            <li><button onClick={() => handleNavClick('experience')} className={`nav-link ${currentSection === 2 ? 'active' : ''}`}>Experience</button></li>
+            <li><button onClick={() => handleNavClick('contact')} className={`nav-link ${currentSection === 3 ? 'active' : ''}`}>Contact</button></li>
           </ul>
         </nav>
 

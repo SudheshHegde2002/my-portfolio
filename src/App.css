@@ -3,11 +3,84 @@
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden; /* Disable scrolling */
 }
 
-/* Smooth scrolling for anchor links */
+/* Horizontal Navigation System */
+.horizontal-container {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 70px - 60px); /* Account for header and footer height */
+  overflow: hidden;
+}
+
+.sections-wrapper {
+  display: flex;
+  width: 400vw; /* 4 sections * 100vw each */
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section-page {
+  width: 100vw;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-secondary);
+}
+
+.section-page::-webkit-scrollbar {
+  width: 6px;
+}
+
+.section-page::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.section-page::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 3px;
+}
+
+.section-page::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Swipe Indicators */
+.swipe-indicators {
+  position: fixed;
+  bottom: 4rem; /* Position above footer */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 1000;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  background: var(--accent-primary);
+  transform: scale(1.2);
+}
+
+.indicator.active {
+  background: var(--accent-primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Disable smooth scrolling for anchor links since we're using horizontal navigation */
 html {
-  scroll-padding-top: 80px;
+  scroll-behavior: auto;
 }
 
 /* Loading animation */

@@ -87,8 +87,14 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
+}
+
+.nav-link.active {
+  color: var(--accent-primary);
+  font-weight: 600;
 }
 
 .header-controls {
