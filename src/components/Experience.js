@@ -23,9 +23,6 @@ const Experience = () => {
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <div className="section-header">
-        </div>
-
             <div className="experience-content">
               <div className="experience-section">
                 <h3 className="subsection-title">Work Experience</h3>
@@ -33,6 +30,16 @@ const Experience = () => {
                   <div className="timeline-cards">
                     {experiences.map((exp, index) => (
                       <div key={index} className="timeline-item-horizontal">
+                        {index === 0 && (
+                          <div className="experience-header current-header">
+                            <span className="header-label">Current</span>
+                          </div>
+                        )}
+                        {index === 1 && (
+                          <div className="experience-header past-header">
+                            <span className="header-label">Past Experience</span>
+                          </div>
+                        )}
                         <div className="timeline-content-horizontal">
                           <h4 className="job-title">{exp.title}</h4>
                           <p className="company-name">{exp.company}</p>
@@ -47,7 +54,6 @@ const Experience = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="timeline-line-container"></div>
                 </div>
               </div>
             </div>
