@@ -3,12 +3,14 @@ import './About.css';
 
 const About = () => {
   const skills = [
-    { name: 'React', level: 90 },
+    { name: 'Python', level: 90 },
     { name: 'JavaScript', level: 85 },
-    { name: 'Node.js', level: 80 },
-    { name: 'Python', level: 75 },
-    { name: 'UI/UX Design', level: 85 },
-    { name: 'CSS/SCSS', level: 90 }
+    { name: 'React', level: 80 },
+    { name: 'Java', level: 75 },
+    { name: 'MongoDB', level: 85 },
+    { name: 'Docker', level: 80 },
+    { name: 'Azure', level: 75 },
+    { name: 'Git', level: 90 }
   ];
 
   return (
@@ -22,32 +24,18 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <div className="about-intro">
-              <h3>I'm a passionate developer who loves creating amazing digital experiences</h3>
+              <h3>I'm a passionate developer who specializes in RAG and scalable backend systems</h3>
               <p>
-                With over 3 years of experience in web development, I specialize in building 
-                modern, responsive applications using React, Node.js, and other cutting-edge 
-                technologies. I'm passionate about clean code, user experience, and continuous learning.
+                With 1 year of experience in software development, I specialize in building 
+                Retrieval-Augmented Generation (RAG) systems and highly scalable backend architectures. 
+                I'm passionate about clean code, system design, and continuous learning in the rapidly 
+                evolving field of AI and cloud technologies.
               </p>
               <p>
-                When I'm not coding, you can find me exploring new technologies, contributing 
-                to open source projects, or sharing knowledge with the developer community.
+                When I'm not coding, you can find me exploring new technologies or creating Music.
               </p>
             </div>
             
-            <div className="about-stats">
-              <div className="stat">
-                <h4>50+</h4>
-                <p>Projects Completed</p>
-              </div>
-              <div className="stat">
-                <h4>3+</h4>
-                <p>Years Experience</p>
-              </div>
-              <div className="stat">
-                <h4>20+</h4>
-                <p>Happy Clients</p>
-              </div>
-            </div>
           </div>
           
           <div className="about-skills">

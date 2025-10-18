@@ -1,0 +1,511 @@
+/* Music World Styles */
+.music-world {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Music Hero Section */
+.music-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  overflow: hidden;
+}
+
+.music-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.music-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.music-hero-text {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.music-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.music-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.music-hero-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.music-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.music-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.music-visualizer {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  height: 200px;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.visualizer-bar {
+  width: 8px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 4px;
+  animation: musicPulse 1.5s ease-in-out infinite;
+}
+
+.visualizer-bar:nth-child(1) { height: 40%; animation-delay: 0s; }
+.visualizer-bar:nth-child(2) { height: 60%; animation-delay: 0.1s; }
+.visualizer-bar:nth-child(3) { height: 80%; animation-delay: 0.2s; }
+.visualizer-bar:nth-child(4) { height: 100%; animation-delay: 0.3s; }
+.visualizer-bar:nth-child(5) { height: 70%; animation-delay: 0.4s; }
+.visualizer-bar:nth-child(6) { height: 50%; animation-delay: 0.5s; }
+.visualizer-bar:nth-child(7) { height: 30%; animation-delay: 0.6s; }
+.visualizer-bar:nth-child(8) { height: 20%; animation-delay: 0.7s; }
+
+@keyframes musicPulse {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
+}
+
+/* Music About Section */
+.music-about {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+}
+
+.music-about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.music-story {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.music-story h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.music-story p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.music-skills {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.music-skills h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.music-skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.music-skill-item {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-skill-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.music-skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.music-skill-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.music-skill-percentage {
+  font-weight: 500;
+  color: var(--accent-primary);
+}
+
+.music-skill-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.music-skill-progress {
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 4px;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.music-skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Music Projects Section */
+.music-projects {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+}
+
+.music-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.music-project-card {
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.music-project-image {
+  height: 200px;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.music-album-art {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.album-placeholder {
+  opacity: 0.8;
+}
+
+.music-project-content {
+  padding: 1.5rem;
+}
+
+.music-project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.music-project-genre {
+  font-size: 0.9rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.music-project-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.music-project-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.music-project-link:hover {
+  color: var(--accent-hover);
+}
+
+.music-project-link::after {
+  content: '♪';
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.music-project-link:hover::after {
+  transform: scale(1.2);
+}
+
+/* Music Tools Section */
+.music-tools {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+}
+
+.instruments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.instrument-card {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instrument-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.instrument-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.instrument-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Music Contact Section */
+.music-contact {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+}
+
+.music-contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.music-contact-info h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.music-contact-info p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.music-platforms h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.platform-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.platform-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.platform-link:hover {
+  background: var(--accent-primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.platform-link span {
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .music-hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .music-about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .music-hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .music-hero {
+    padding: 2rem 0;
+  }
+  
+  .music-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .music-hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .music-hero-description {
+    font-size: 1rem;
+  }
+  
+  .music-hero-buttons {
+    justify-content: center;
+  }
+  
+  .music-visualizer {
+    height: 150px;
+  }
+  
+  .music-about,
+  .music-projects,
+  .music-tools,
+  .music-contact {
+    padding: 4rem 0;
+  }
+  
+  .music-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .instruments-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .platform-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .platform-link {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-hero-title {
+    font-size: 2rem;
+  }
+  
+  .music-hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .music-visualizer {
+    height: 120px;
+    gap: 2px;
+  }
+  
+  .visualizer-bar {
+    width: 6px;
+  }
+}

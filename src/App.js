@@ -6,9 +6,11 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import MusicWorld from './components/MusicWorld';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+  const [currentWorld, setCurrentWorld] = useState('coding'); // 'coding' or 'music'
 
   useEffect(() => {
     // Set initial theme
@@ -20,13 +22,28 @@ function App() {
     document.documentElement.setAttribute('data-theme', !darkMode ? 'dark' : 'light');
   };
 
+  const toggleWorld = () => {
+    setCurrentWorld(currentWorld === 'coding' ? 'music' : 'coding');
+  };
+
   return (
     <div className="App">
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Hero />
-      <About />
-      <Experience />
-      <Contact />
+      <Header 
+        darkMode={darkMode} 
+        toggleDarkMode={toggleDarkMode}
+        currentWorld={currentWorld}
+        toggleWorld={toggleWorld}
+      />
+      {currentWorld === 'coding' ? (
+        <>
+          <Hero />
+          <About />
+          <Experience />
+          <Contact />
+        </>
+      ) : (
+        <MusicWorld />
+      )}
       <Footer />
     </div>
   );

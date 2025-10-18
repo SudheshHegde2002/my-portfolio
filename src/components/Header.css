@@ -91,6 +91,13 @@
   width: 100%;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.world-toggle,
 .theme-toggle {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -104,11 +111,23 @@
   justify-content: center;
 }
 
+.world-toggle:hover,
 .theme-toggle:hover {
   background: var(--bg-tertiary);
   border-color: var(--accent-primary);
   color: var(--accent-primary);
   transform: scale(1.05);
+}
+
+.world-toggle {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  border: none;
+}
+
+.world-toggle:hover {
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent-primary));
+  color: white;
 }
 
 /* Mobile Navigation */

@@ -18,11 +18,11 @@ const Hero = () => {
               Hi, I'm <span className="highlight">Sudhesh Hegde</span>
             </h1>
             <h2 className="hero-subtitle">
-              Full Stack Developer
+              Backend Developer & RAG Systems Specialist
             </h2>
             <p className="hero-description">
-              I create scalable, functional, and user-centered digital experiences 
-              that bring ideas to life through code.
+              I build highly scalable backend systems and Retrieval-Augmented Generation (RAG) 
+              solutions that power intelligent applications and drive business growth.
             </p>
             <div className="hero-buttons">
               <button 
