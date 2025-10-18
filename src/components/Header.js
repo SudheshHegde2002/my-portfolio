@@ -23,9 +23,6 @@ const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld, currentSe
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo">
-          <span className="logo-text">Portfolio</span>
-        </div>
         
         <nav className="nav">
           <ul className="nav-list">
