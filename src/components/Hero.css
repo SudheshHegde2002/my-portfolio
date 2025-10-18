@@ -15,9 +15,55 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(109, 40, 217, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.1) 0%, transparent 70%);
   pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+}
+
+[data-theme="dark"] .hero::before {
+  background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(109, 40, 217, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.2) 0%, transparent 70%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.03) 50%, transparent 70%),
+    linear-gradient(-45deg, transparent 30%, rgba(109, 40, 217, 0.03) 50%, transparent 70%);
+  animation: rotate 30s linear infinite;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .hero::after {
+  background: 
+    linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.08) 50%, transparent 70%),
+    linear-gradient(-45deg, transparent 30%, rgba(109, 40, 217, 0.08) 50%, transparent 70%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .hero-container {
