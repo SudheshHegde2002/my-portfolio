@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -11,8 +11,10 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [currentWorld, setCurrentWorld] = useState('coding'); // 'coding' or 'music'
   const [currentSection, setCurrentSection] = useState(0); // 0: Hero, 1: About, 2: Experience, 3: Contact
+  const musicNavigateRef = useRef(null);
 
   const sections = ['hero', 'about', 'experience', 'contact'];
+  const musicSections = ['hero', 'projects', 'contact']; // Music world sections
 
   useEffect(() => {
     // Set initial theme
@@ -22,8 +24,6 @@ function App() {
   useEffect(() => {
     // Add keyboard navigation
     const handleKeyPress = (e) => {
-      if (currentWorld === 'music') return;
-      
       if (e.key === 'ArrowLeft') {
         handleSwipe('right');
       } else if (e.key === 'ArrowRight') {
@@ -46,16 +46,27 @@ function App() {
   };
 
   const navigateToSection = (sectionIndex) => {
-    setCurrentSection(sectionIndex);
+    if (currentWorld === 'coding') {
+      setCurrentSection(sectionIndex);
+    } else if (currentWorld === 'music' && musicNavigateRef.current) {
+      musicNavigateRef.current(sectionIndex);
+    }
+  };
+
+  const handleNavigateToMusicSection = (navigateFn) => {
+    musicNavigateRef.current = navigateFn;
   };
 
   const handleSwipe = (direction) => {
-    if (currentWorld === 'music') return; // No swipe navigation in music world
-    
-    if (direction === 'left' && currentSection < sections.length - 1) {
-      setCurrentSection(currentSection + 1);
-    } else if (direction === 'right' && currentSection > 0) {
-      setCurrentSection(currentSection - 1);
+    if (currentWorld === 'coding') {
+      if (direction === 'left' && currentSection < sections.length - 1) {
+        setCurrentSection(currentSection + 1);
+      } else if (direction === 'right' && currentSection > 0) {
+        setCurrentSection(currentSection - 1);
+      }
+    } else if (currentWorld === 'music' && musicNavigateRef.current) {
+      // Get current music section from the ref
+      // This is handled by MusicWorld's internal state
     }
   };
 
@@ -68,7 +79,7 @@ function App() {
         toggleWorld={toggleWorld}
         currentSection={currentSection}
         navigateToSection={navigateToSection}
-        sections={sections}
+        sections={currentWorld === 'coding' ? sections : musicSections}
       />
       {currentWorld === 'coding' ? (
         <div className="horizontal-container">
@@ -91,7 +102,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <MusicWorld />
+        <MusicWorld navigateToMusicSection={handleNavigateToMusicSection} />
       )}
     </div>
   );
