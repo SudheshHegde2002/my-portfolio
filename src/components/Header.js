@@ -29,10 +29,39 @@ const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld, currentSe
         
         <nav className="nav">
           <ul className="nav-list">
-            <li><button onClick={() => handleNavClick('hero')} className={`nav-link ${currentSection === 0 ? 'active' : ''}`}>Home</button></li>
-            <li><button onClick={() => handleNavClick('about')} className={`nav-link ${currentSection === 1 ? 'active' : ''}`}>About</button></li>
-            <li><button onClick={() => handleNavClick('experience')} className={`nav-link ${currentSection === 2 ? 'active' : ''}`}>Experience</button></li>
-            <li><button onClick={() => handleNavClick('contact')} className={`nav-link ${currentSection === 3 ? 'active' : ''}`}>Contact</button></li>
+            <li>
+              <button onClick={() => handleNavClick('hero')} className={`nav-link ${currentSection === 0 ? 'active' : ''}`} title="Home">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleNavClick('about')} className={`nav-link ${currentSection === 1 ? 'active' : ''}`} title="About">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleNavClick('experience')} className={`nav-link ${currentSection === 2 ? 'active' : ''}`} title="Experience">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleNavClick('contact')} className={`nav-link ${currentSection === 3 ? 'active' : ''}`} title="Contact">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </button>
+            </li>
           </ul>
         </nav>
 

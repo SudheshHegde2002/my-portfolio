@@ -33,9 +33,9 @@ const Hero = () => {
               </button>
               <button 
                 className="btn btn-secondary"
-                onClick={() => scrollToSection('about')}
+                onClick={() => window.open('/resume.pdf', '_blank')}
               >
-                Learn More
+                Resume
               </button>
             </div>
           </div>

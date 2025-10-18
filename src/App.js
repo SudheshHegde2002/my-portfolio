@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 import MusicWorld from './components/MusicWorld';
 
 function App() {
@@ -90,22 +89,10 @@ function App() {
               <Contact />
             </div>
           </div>
-          
-          {/* Swipe indicators */}
-          <div className="swipe-indicators">
-            {sections.map((section, index) => (
-              <button
-                key={section}
-                className={`indicator ${index === currentSection ? 'active' : ''}`}
-                onClick={() => navigateToSection(index)}
-              />
-            ))}
-          </div>
         </div>
       ) : (
         <MusicWorld />
       )}
-      <Footer />
     </div>
   );
 }
