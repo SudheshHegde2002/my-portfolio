@@ -1,0 +1,61 @@
+import React from 'react';
+import './Hero.css';
+
+const Hero = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section id="hero" className="hero">
+      <div className="hero-container">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1 className="hero-title">
+              Hi, I'm <span className="highlight">Sudhesh Hegde</span>
+            </h1>
+            <h2 className="hero-subtitle">
+              Full Stack Developer
+            </h2>
+            <p className="hero-description">
+              I create scalable, functional, and user-centered digital experiences 
+              that bring ideas to life through code.
+            </p>
+            <div className="hero-buttons">
+              <button 
+                className="btn btn-primary"
+                onClick={() => scrollToSection('contact')}
+              >
+                Get In Touch
+              </button>
+              <button 
+                className="btn btn-secondary"
+                onClick={() => scrollToSection('about')}
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div className="hero-image">
+            <div className="hero-avatar">
+              <div className="avatar-placeholder">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="scroll-indicator">
+          <div className="scroll-arrow"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
