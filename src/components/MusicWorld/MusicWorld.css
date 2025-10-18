@@ -310,6 +310,8 @@
   text-decoration: none;
   color: var(--text-secondary);
   transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .platform-link:hover {

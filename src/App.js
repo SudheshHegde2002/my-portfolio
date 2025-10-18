@@ -24,16 +24,18 @@ function App() {
   useEffect(() => {
     // Add keyboard navigation
     const handleKeyPress = (e) => {
-      if (e.key === 'ArrowLeft') {
-        handleSwipe('right');
-      } else if (e.key === 'ArrowRight') {
-        handleSwipe('left');
+      if (currentWorld === 'coding') {
+        if (e.key === 'ArrowLeft' && currentSection > 0) {
+          setCurrentSection(currentSection - 1);
+        } else if (e.key === 'ArrowRight' && currentSection < sections.length - 1) {
+          setCurrentSection(currentSection + 1);
+        }
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentSection, currentWorld]);
+  }, [currentSection, currentWorld, sections.length]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
