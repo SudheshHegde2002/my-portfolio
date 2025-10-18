@@ -42,11 +42,6 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">Get to know me better</p>
-        </div>
-        
         <div className="about-content">
           <div className="about-intro">
             <h3>I'm a passionate developer who specializes in RAG and scalable backend systems</h3>

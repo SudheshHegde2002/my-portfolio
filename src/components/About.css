@@ -4,17 +4,15 @@
   align-items: center;
   justify-content: center;
   background: var(--bg-secondary);
-  padding: 2rem 0;
-  padding-top: 4rem; /* Add space for navbar */
+  position: relative;
+  overflow: hidden;
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-height: calc(100vh - 140px); /* Account for navbar and padding */
-  overflow-y: auto;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .about-intro {
@@ -114,23 +112,6 @@
   color: white;
 }
 
-/* Custom scrollbar for about content */
-.about-content::-webkit-scrollbar {
-  width: 4px;
-}
-
-.about-content::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-}
-
-.about-content::-webkit-scrollbar-thumb {
-  background: var(--accent-primary);
-  border-radius: 2px;
-}
-
-.about-content::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
