@@ -4,6 +4,9 @@
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow: hidden; /* Disable scrolling */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 /* Horizontal Navigation System */
@@ -12,13 +15,31 @@
   width: 100vw;
   height: calc(100vh - 70px); /* Account for header height only */
   overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .sections-wrapper {
   display: flex;
   width: 400vw; /* 4 sections * 100vw each */
   height: 100%;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  contain: layout style paint;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
 }
 
 .section-page {
@@ -28,6 +49,11 @@
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-primary) var(--bg-secondary);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  contain: layout style paint;
+  isolation: isolate;
 }
 
 .section-page::-webkit-scrollbar {
@@ -51,6 +77,52 @@
 /* Disable smooth scrolling for anchor links since we're using horizontal navigation */
 html {
   scroll-behavior: auto;
+}
+
+/* Force hardware acceleration for all animated elements */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize for smooth animations */
+.sections-wrapper,
+.section-page,
+.horizontal-container {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Additional smoothness optimizations */
+.sections-wrapper {
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Prevent shutter at animation end */
+.sections-wrapper:not(:hover) {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ensure smooth settling */
+.sections-wrapper {
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Loading animation */
