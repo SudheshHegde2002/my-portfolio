@@ -8,7 +8,7 @@ const Experience = () => {
           company: 'Shramajeevi Television Pvt Ltd',
           period: 'Present',
           description: 'Building backend systems, video server, and RAG solutions for intelligent applications and driving business growth.',
-          technologies: ['React', 'TypeScript', 'Redux', 'Jest', 'Webpack']
+          technologies: ['React', 'TypeScript', 'Redux', 'Python', 'Kotlin']
         },
         {
           title: 'Application Developer Intern',

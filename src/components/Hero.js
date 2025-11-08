@@ -35,10 +35,11 @@ const Hero = ({ navigateToSection }) => {
           <div className="hero-image">
             <div className="hero-avatar">
               <div className="avatar-placeholder">
-                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
+                <img 
+                  src="/myPic.jpeg" 
+                  alt="Sudhesh Hegde" 
+                  className="avatar-image"
+                />
               </div>
             </div>
           </div>
