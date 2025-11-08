@@ -1,9 +1,19 @@
 /* Music World Styles */
 .music-world {
-  height: calc(100vh - 70px);
+  flex: 1;
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Account for mobile bottom navigation */
+@media (max-width: 768px) {
+  .music-world {
+    flex: 1;
+    min-height: 0;
+  }
 }
 
 /* Horizontal Navigation System */
@@ -29,6 +39,13 @@
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-primary) var(--bg-secondary);
+}
+
+/* On mobile, allow sections to scroll properly */
+@media (max-width: 768px) {
+  .music-section-page {
+    height: 100%;
+  }
 }
 
 .music-section-page::-webkit-scrollbar {

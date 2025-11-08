@@ -1,5 +1,5 @@
 .App {
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -7,16 +7,30 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   contain: layout style paint;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Horizontal Navigation System */
 .horizontal-container {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 70px); /* Account for header height only */
+  flex: 1;
   overflow: hidden;
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+/* Account for mobile bottom navigation */
+@media (max-width: 768px) {
+  .App {
+    height: calc(100vh - 70px - env(safe-area-inset-bottom)); /* Account for bottom nav */
+  }
+  
+  .horizontal-container {
+    flex: 1;
+    min-height: 0;
+  }
 }
 
 .sections-wrapper {
@@ -54,6 +68,14 @@
   will-change: transform;
   contain: layout style paint;
   isolation: isolate;
+}
+
+/* On mobile, allow sections to scroll properly */
+@media (max-width: 768px) {
+  .section-page {
+    height: 100%;
+    contain: none; /* Remove containment to allow proper scrolling */
+  }
 }
 
 .section-page::-webkit-scrollbar {
