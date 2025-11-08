@@ -81,7 +81,7 @@ const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld, currentSe
           </nav>
 
           <div className="header-controls">
-            <button className="world-toggle" onClick={toggleWorld} title={`Switch to ${currentWorld === 'coding' ? 'Music' : 'Coding'} World`}>
+            {/* <button className="world-toggle" onClick={toggleWorld} title={`Switch to ${currentWorld === 'coding' ? 'Music' : 'Coding'} World`}>
               {currentWorld === 'coding' ? (
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M9 18V5l12-2v13"/>
@@ -94,7 +94,7 @@ const Header = ({ darkMode, toggleDarkMode, currentWorld, toggleWorld, currentSe
                   <polyline points="8,6 2,12 8,18"/>
                 </svg>
               )}
-            </button>
+            </button> */}
             
             <button className="theme-toggle" onClick={toggleDarkMode}>
               {darkMode ? (

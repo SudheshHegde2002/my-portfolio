@@ -163,6 +163,10 @@
   .logo-text {
     font-size: 1.25rem;
   }
+  
+  .world-toggle {
+    display: none !important; /* Hide world toggle button on mobile */
+  }
 }
 
 @media (max-width: 640px) {
